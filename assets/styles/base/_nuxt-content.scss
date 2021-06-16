@@ -1,0 +1,200 @@
+@use 'nevo/settings';
+
+/*! purgecss start ignore */
+
+.nuxt-content {
+  .icon.icon-link::before {
+    content: '#';
+    visibility: hidden;
+    display: inline-block;
+    font-weight: settings.theme('weight', '400');
+    color: settings.theme('colors', 'gray', '400');
+  }
+
+  h2 {
+    font-size: settings.theme('text', '6');
+    letter-spacing: settings.theme('tracking', '-1');
+    font-weight: settings.theme('weight', '700');
+    margin-bottom: settings.theme('spacing', '10');
+    color: settings.theme('colors', 'gray', '900');
+
+    .icon.icon-link::before {
+      width: 30px;
+      margin-left: -30px;
+    }
+  }
+
+  h3 {
+    font-size: settings.theme('text', '5');
+    letter-spacing: settings.theme('tracking', '-1');
+    font-weight: settings.theme('weight', '700');
+    margin-bottom: settings.theme('spacing', '10');
+    color: settings.theme('colors', 'gray', '900');
+
+    .icon.icon-link::before {
+      width: 25px;
+      margin-left: -25px;
+    }
+  }
+
+  h2,
+  h3 {
+    &:hover {
+      .icon.icon-link::before {
+        visibility: visible;
+      }
+    }
+  }
+
+  h4,
+  strong {
+    font-size: settings.theme('text', '4');
+    letter-spacing: settings.theme('tracking', '-1');
+    font-weight: settings.theme('weight', '700');
+    margin-bottom: settings.theme('spacing', '10');
+    color: settings.theme('colors', 'gray', '900');
+  }
+
+  p {
+    font-size: settings.theme('text', '3');
+    font-weight: settings.theme('weight', '400');
+    letter-spacing: settings.theme('tracking', '2');
+    line-height: settings.theme('leading', '7');
+    margin-bottom: settings.theme('spacing', '10');
+    color: settings.theme('colors', 'gray', '500');
+  }
+
+  ul {
+    color: settings.theme('colors', 'gray', '500');
+    line-height: settings.theme('leading', '7');
+    font-size: settings.theme('text', '3');
+    font-weight: settings.theme('weight', '400');
+    margin-bottom: settings.theme('spacing', '10');
+    letter-spacing: settings.theme('tracking', '2');
+  }
+
+  a {
+    color: #0769d8;
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+    margin: settings.theme('spacing', '13') 0;
+    background-color: settings.theme('colors', 'gray', '200');
+  }
+}
+
+.nuxt-content-highlight {
+  position: relative;
+  font-family: settings.theme('family', 'mono');
+  font-size: settings.theme('text', '2');
+  font-weight: settings.theme('weight', '400');
+  line-height: settings.theme('leading', '7');
+
+  .filename {
+    position: absolute;
+    top: settings.theme('spacing', '9');
+    right: settings.theme('spacing', '9');
+    color: #707a8c;
+  }
+}
+
+div[data-content-table='class-info'] {
+  table {
+    width: 100%;
+    line-height: settings.theme('leading', '5');
+    font-size: settings.theme('text', '1');
+
+    td {
+      padding: settings.theme('spacing', '4') 0;
+      margin: settings.theme('spacing', '3') 0;
+      vertical-align: top;
+    }
+
+    th {
+      padding: settings.theme('spacing', '4') 0;
+      border-bottom: solid 1px settings.theme('colors', 'gray', '200');
+      font-size: settings.theme('text', '2');
+      color: settings.theme('colors', 'gray', '500');
+      font-weight: settings.theme('weight', '700');
+      letter-spacing: settings.theme('tracking', '0');
+    }
+  }
+
+  tbody {
+    font-family: settings.theme('family', 'mono');
+    letter-spacing: settings.theme('tracking', '-2');
+    border-bottom: solid 1px settings.theme('colors', 'gray', '200');
+
+    tr {
+      border-top: solid 1px settings.theme('colors', 'gray', '200');
+
+      :nth-child(1) {
+        color: #a153f3;
+      }
+
+      :nth-child(2) {
+        color: #0e7eda;
+      }
+    }
+  }
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  background: #1d2433;
+  color: #d5d9e2;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*='language-'] {
+  padding: settings.theme('spacing', '9');
+  margin: settings.theme('spacing', '13') 0;
+  border-radius: settings.theme('rounded', '5');
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.language-css,
+.language-scss {
+  .token.comment {
+    color: #707a8c;
+  }
+
+  .token.operator,
+  .token.variable {
+    color: #73d0ff;
+  }
+
+  .token.punctuation {
+    color: #c3e7fa;
+  }
+
+  .token.boolean {
+    color: #f29e74;
+  }
+
+  .token.keyword {
+    color: #c678dd;
+  }
+
+  .token.string {
+    color: #bae67e;
+  }
+}
+
+/*! purgecss end ignore */

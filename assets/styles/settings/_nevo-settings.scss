@@ -1,0 +1,15 @@
+// These settings are included via '@nuxtjs/style-resources' module
+
+@use '~nevo/settings' as * with (
+  $core: (
+    'purge': (
+      'base': false
+    )
+  ),
+
+  $theme: (
+    'family': (
+      'sans': ('Manrope', 'Helvetica Neue', 'Arial', sans-serif)
+    )
+  )
+);
