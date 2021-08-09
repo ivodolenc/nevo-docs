@@ -2,7 +2,7 @@
  * Manrope Font
  * Version: 4.504
  *
- * Manrope font – modern geometric sans-serif
+ * Modern geometric sans-serif
  * @link https://manropefont.com/
  *
  */
@@ -37,4 +37,21 @@
   font-weight: 700;
   font-display: swap;
   src: url('/fonts/M-700.woff2') format('woff2');
+}
+
+/**
+ * JetBrains Mono Font
+ * Version: 2.225
+ *
+ * A typeface for developers
+ * @link https://www.jetbrains.com/lp/mono/
+ *
+ */
+
+@font-face {
+  font-family: 'JBMono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/JBM-400.woff2') format('woff2');
 }
