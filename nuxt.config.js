@@ -1,4 +1,6 @@
 import config from './config'
+import routes from './pages/routes'
+import purgecss from './utils/purgecss'
 
 export default {
   target: 'static',
@@ -33,10 +35,10 @@ export default {
   ],
 
   buildModules: [
+    'nuxt-bowser',
     '@nuxtjs/style-resources',
     '@nuxtjs/netlify-files',
-    'nuxt-font-loader',
-    'nuxt-purgecss'
+    'nuxt-font-loader'
   ],
 
   css: ['~/assets/styles/app.scss'],
@@ -45,7 +47,9 @@ export default {
     scss: '~/assets/styles/settings/_nevo-settings.scss'
   },
 
-  plugins: ['~/plugins/vue-scrollactive.js'],
+  plugins: [
+    // '~/plugins/plugin.js', '~/plugins/plugin.client.js'
+  ],
 
   head: {
     htmlAttrs: {
@@ -92,13 +96,23 @@ export default {
 
   router: {
     linkActiveClass: 'link-active',
-    linkExactActiveClass: 'link-exact-active'
+    linkExactActiveClass: 'link-exact-active',
+
+    extendRoutes() {
+      return routes
+    }
   },
 
   build: {
     publicPath: config.nuxt.publicPath,
 
     extractCSS: true,
+
+    postcss: {
+      plugins: {
+        ...purgecss
+      }
+    },
 
     filenames: {
       app: ({ isDev }) =>
@@ -257,20 +271,14 @@ export default {
     }
   },
 
-  purgeCSS: {
-    whitelistPatterns: [
-      /^link(|-exact)-active$/, // Nuxt link classes
-      /^lazy(load|loading|loaded)$/ // Lazysizes
-    ]
-  },
-
   content: {
     liveEdit: false,
     markdown: {
       prism: {
         theme: false
       }
-    }
+    },
+    fullTextSearchFields: () => ['title', 'tags']
   },
 
   fontLoader: {
