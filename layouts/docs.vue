@@ -1,34 +1,26 @@
 <template>
   <div id="__docs">
+    <TopBarDocs />
     <TheHeaderDocs />
-    <div class="w-full max-w-screen-xxl mx-auto lg:flex">
-      <TheSidebarDocs />
-      <div
-        id="content"
-        class="
-          z-50
-          min-w-0
-          w-full
-          flex-auto
-          lg:static lg:max-h-full lg:overflow-visible
-        "
-      >
-        <Nuxt />
-      </div>
+    <div class="flex z-30 bg-dark-700 relative left-0 w-full">
+      <TheSidebarLeft />
+      <Nuxt />
     </div>
   </div>
 </template>
 
 <script>
+import TopBarDocs from '~/components/blocks/TopBarDocs'
 import TheHeaderDocs from '~/components/templates/TheHeaderDocs'
-import TheSidebarDocs from '~/components/templates/TheSidebarDocs'
+import TheSidebarLeft from '~/components/templates/TheSidebarLeft'
 
 import { canonical, facebook, twitter } from '~/utils/getHeadData'
 
 export default {
   components: {
+    TopBarDocs,
     TheHeaderDocs,
-    TheSidebarDocs
+    TheSidebarLeft
   },
 
   head() {

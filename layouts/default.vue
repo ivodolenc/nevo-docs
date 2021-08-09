@@ -1,9 +1,7 @@
 <template>
   <div id="__default">
     <TheHeaderHome />
-    <div class="flex w-full mx-auto lg:max-w-screen-xxl">
-      <Nuxt />
-    </div>
+    <Nuxt />
   </div>
 </template>
 
