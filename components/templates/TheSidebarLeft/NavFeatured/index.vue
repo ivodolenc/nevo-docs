@@ -1,13 +1,13 @@
 <template>
-  <ul class="pb-14 text-2 weight-500 text-gray-500 leading-4 tracking-1">
+  <ul class="pb-14 text-2 weight-500 text-gray-400 leading-4 tracking-1">
     <li v-for="route in navigation" :key="route.id">
       <NuxtLink
         v-if="route.path"
         :to="route.path"
-        class="flex items-center py-4 transition-colors hover:text-gray-900"
+        class="flex items-center py-5 transition-colors hover:text-gray-100"
       >
         <span v-if="route.icon" class="w-10 mr-6">
-          <component :is="route.icon" class="text-gray-900" />
+          <component :is="route.icon" />
         </span>
         <span>
           {{ route.name }}
@@ -18,10 +18,10 @@
         :href="route.href"
         rel="noopener noreferrer"
         target="_blank"
-        class="flex items-center py-4 transition-colors hover:text-gray-900"
+        class="flex items-center py-5 transition-colors hover:text-gray-100"
       >
         <span v-if="route.icon" class="w-10 mr-6">
-          <component :is="route.icon" class="text-gray-900" />
+          <component :is="route.icon" />
         </span>
         <span>
           {{ route.name }}
