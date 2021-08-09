@@ -3,6 +3,8 @@
 /*! purgecss start ignore */
 
 .nuxt-content {
+  color: settings.theme('colors', 'gray', '50');
+
   .icon.icon-link::before {
     content: '#';
     visibility: hidden;
@@ -11,12 +13,24 @@
     color: settings.theme('colors', 'gray', '400');
   }
 
-  h2 {
+  #defaults {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    height: 0;
+  }
+
+  > h2 {
+    font-size: settings.theme('text', '7');
+
+    .icon.icon-link::before {
+      width: 35px;
+      margin-left: -35px;
+    }
+  }
+
+  > h3 {
     font-size: settings.theme('text', '6');
-    letter-spacing: settings.theme('tracking', '-1');
-    font-weight: settings.theme('weight', '700');
-    margin-bottom: settings.theme('spacing', '10');
-    color: settings.theme('colors', 'gray', '900');
 
     .icon.icon-link::before {
       width: 30px;
@@ -24,21 +38,13 @@
     }
   }
 
-  h3 {
-    font-size: settings.theme('text', '5');
-    letter-spacing: settings.theme('tracking', '-1');
+  > h2,
+  > h3 {
     font-weight: settings.theme('weight', '700');
+    letter-spacing: settings.theme('tracking', '-1');
+    margin-top: settings.theme('spacing', '10');
     margin-bottom: settings.theme('spacing', '10');
-    color: settings.theme('colors', 'gray', '900');
 
-    .icon.icon-link::before {
-      width: 25px;
-      margin-left: -25px;
-    }
-  }
-
-  h2,
-  h3 {
     &:hover {
       .icon.icon-link::before {
         visibility: visible;
@@ -46,42 +52,23 @@
     }
   }
 
-  h4,
-  strong {
+  > h4,
+  > strong {
     font-size: settings.theme('text', '4');
-    letter-spacing: settings.theme('tracking', '-1');
     font-weight: settings.theme('weight', '700');
+    letter-spacing: settings.theme('tracking', '-1');
     margin-bottom: settings.theme('spacing', '10');
-    color: settings.theme('colors', 'gray', '900');
   }
 
-  p {
+  > p {
     font-size: settings.theme('text', '3');
     font-weight: settings.theme('weight', '400');
     letter-spacing: settings.theme('tracking', '2');
     line-height: settings.theme('leading', '7');
-    margin-bottom: settings.theme('spacing', '10');
-    color: settings.theme('colors', 'gray', '500');
   }
 
-  ul {
-    color: settings.theme('colors', 'gray', '500');
-    line-height: settings.theme('leading', '7');
-    font-size: settings.theme('text', '3');
-    font-weight: settings.theme('weight', '400');
-    margin-bottom: settings.theme('spacing', '10');
-    letter-spacing: settings.theme('tracking', '2');
-  }
-
-  a {
-    color: #0769d8;
-  }
-
-  hr {
-    width: 100%;
-    height: 1px;
-    margin: settings.theme('spacing', '13') 0;
-    background-color: settings.theme('colors', 'gray', '200');
+  > a {
+    color: settings.theme('colors', 'sky', '600');
   }
 }
 

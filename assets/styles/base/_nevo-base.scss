@@ -1,5 +1,6 @@
+@use 'nevo/settings';
 @use 'nevo/base';
 
 html {
-  background-color: rgba(#fff, 1);
+  background-color: settings.theme('colors', 'dark', '700');
 }

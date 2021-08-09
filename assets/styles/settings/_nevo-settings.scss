@@ -1,5 +1,7 @@
 // These settings are included via '@nuxtjs/style-resources' module
 
+@use '~nevo/colors';
+
 @use '~nevo/settings' as * with (
   $core: (
     'purge': (
@@ -9,7 +11,31 @@
 
   $theme: (
     'family': (
-      'sans': ('Manrope', 'Helvetica Neue', 'Arial', sans-serif)
+      'sans': ('Manrope', 'Helvetica Neue', 'Arial', sans-serif),
+      'mono': ('JBMono', 'Menlo', 'Monaco', 'Courier New', monospace)
+    ),
+
+    'colors': (
+      'gray': map-get(colors.$colors, 'true-gray'),
+      'sky': map-get(colors.$colors, 'sky'),
+      'violet': map-get(colors.$colors, 'violet'),
+      'dark': (
+        '50': #909090,
+        '100': #696969,
+        '200': #5d5d5d,
+        '300': #444444,
+        '400': #323232,
+        '500': #2b2b2b,
+        '600': #232323,
+        '700': #191919,
+        '800': #131313,
+        '900': #101010,
+      )
+    ),
+
+    'text': (
+      '#{0\.6}': 0.5rem,
+      '#{0\.8}': 0.625rem,
     )
   )
 );
