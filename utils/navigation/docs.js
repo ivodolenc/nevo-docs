@@ -12,7 +12,7 @@ export const navFeatured = [
   {
     icon: 'IconChangelog',
     name: 'Release Notes',
-    path: '/release-notes'
+    href: 'https://github.com/ivodolenc/nevo/blob/master/CHANGELOG.md'
   },
   {
     icon: 'IconSponsor',
@@ -100,6 +100,26 @@ export const navMain = [
       {
         name: 'Border Width',
         path: '/docs/border-width'
+      },
+      {
+        name: 'Divide Color',
+        path: '/docs/divide-color',
+        new: true
+      },
+      {
+        name: 'Divide Opacity',
+        path: '/docs/divide-opacity',
+        new: true
+      },
+      {
+        name: 'Divide Style',
+        path: '/docs/divide-style',
+        new: true
+      },
+      {
+        name: 'Divide Width',
+        path: '/docs/divide-width',
+        new: true
       }
     ],
 
@@ -146,6 +166,21 @@ export const navMain = [
     // Position: 300-350
     Effects: [
       {
+        name: 'Box Decoration Break',
+        path: '/docs/box-decoration-break',
+        new: true
+      },
+      {
+        name: 'Background Blend Mode',
+        path: '/docs/background-blend-mode',
+        new: true
+      },
+      {
+        name: 'Mix Blend Mode',
+        path: '/docs/mix-blend-mode',
+        new: true
+      },
+      {
         name: 'Opacity',
         path: '/docs/opacity'
       }
@@ -168,6 +203,11 @@ export const navMain = [
       {
         name: 'Filter',
         path: '/docs/filter'
+      },
+      {
+        name: 'Backdrop Opacity',
+        path: '/docs/backdrop-opacity',
+        new: true
       }
     ],
 
@@ -275,7 +315,8 @@ export const navMain = [
       },
       {
         name: 'Scrollbar',
-        path: '/docs/scrollbar'
+        path: '/docs/scrollbar',
+        new: true
       },
       {
         name: 'User Select',
@@ -324,6 +365,26 @@ export const navMain = [
       {
         name: 'Z-index',
         path: '/docs/z-index'
+      },
+      {
+        name: 'Box Sizing',
+        path: '/docs/box-sizing',
+        new: true
+      },
+      {
+        name: 'Clear',
+        path: '/docs/clear',
+        new: true
+      },
+      {
+        name: 'Floats',
+        path: '/docs/floats',
+        new: true
+      },
+      {
+        name: 'Isolation',
+        path: '/docs/isolation',
+        new: true
       }
     ],
 
@@ -524,6 +585,16 @@ export const navMain = [
       {
         name: 'Word Break',
         path: '/docs/word-break'
+      },
+      {
+        name: 'Placeholder Color',
+        path: '/docs/placeholder-color',
+        new: true
+      },
+      {
+        name: 'Placeholder Opacity',
+        path: '/docs/placeholder-opacity',
+        new: true
       }
     ]
   }
