@@ -1,41 +1,77 @@
 <template>
   <div class="flex w-full">
     <article
-      class="flex-auto pt-13 pb-18 px-8 sm:px-11 xl:px-13 overflow-x-hidden"
+      class="
+        z-30
+        w-full
+        max-w-screen-lg
+        overflow-x-hidden
+        mx-auto
+        pt-18
+        pb-18
+        px-8
+        sm:px-11
+        lg:px-19
+        xxl2:px-23
+      "
     >
-      <div
-        class="border-b-1 border-gray-200 border-opacity-60 w-full pb-13 mb-13"
-      >
-        <h1 class="pb-1 text-8 weight-700 text-gray-900 -tracking-2">
+      <div class="w-full pb-13 mb-13">
+        <p class="text-3 weight-700 tracking-3 uppercase mb-4 text-sky-500">
+          {{ page.category }}
+        </p>
+        <h1
+          class="
+            flex
+            items-center
+            pb-8
+            text-11
+            weight-700
+            text-gray-50
+            -tracking-1
+          "
+        >
           {{ page.title }}
         </h1>
-        <p class="text-4 text-gray-500 tracking-1">{{ page.description }}</p>
+        <p class="text-6 text-gray-50 tracking-3">{{ page.description }}</p>
       </div>
       <NuxtContent :document="page" />
       <NavPrevNext :prev="prev" :next="next" />
     </article>
-    <NavTableOfContents :toc="page.toc" />
+    <TheSidebarRight :toc="page.toc" />
   </div>
 </template>
 
 <script>
-import NavTableOfContents from '~/components/blocks/NavTableOfContents'
 import NavPrevNext from '~/components/blocks/NavPrevNext'
+import TheSidebarRight from '~/components/templates/TheSidebarRight'
+
+/* eslint-disable */
+import TableGenerateBetween from '~/components/blocks/TableGenerateRules/TableGenerateBetween'
+import TableGenerateColors from '~/components/blocks/TableGenerateRules/TableGenerateColors'
+import TableGenerateCommon from '~/components/blocks/TableGenerateRules/TableGenerateCommon'
+import TableGenerateContainer from '~/components/blocks/TableGenerateRules/TableGenerateContainer'
+import TableGenerateTheme from '~/components/blocks/TableGenerateRules/TableGenerateTheme'
+/* eslint-enable */
 
 export default {
   components: {
-    NavTableOfContents,
-    NavPrevNext
+    NavPrevNext,
+    TheSidebarRight,
+
+    /* eslint-disable */
+    TableGenerateBetween,
+    TableGenerateColors,
+    TableGenerateCommon,
+    TableGenerateContainer,
+    TableGenerateTheme
+    /* eslint-enable */
   },
 
   layout: 'docs',
 
   async asyncData({ $content, params }) {
-    const page = await $content('docs', params.slug)
-      .where({ slug: { $ne: 'release-notes' } })
-      .fetch()
+    const page = await $content('docs', params.slug).fetch()
     const [prev, next] = await $content('docs')
-      .where({ slug: { $ne: 'release-notes' } })
       .only(['title', 'slug'])
       .sortBy('position')
       .surround(page.slug)
@@ -62,3 +98,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.xxl2\:px-23 {
+  @include media($from: 1536px) {
+    padding-left: theme('spacing', '23');
+    padding-right: theme('spacing', '23');
+  }
+}
+</style>
