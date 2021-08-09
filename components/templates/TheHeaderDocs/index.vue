@@ -1,52 +1,99 @@
 <template>
-  <header class="sticky top-0 z-100 border-t-1 border-white">
+  <header class="sticky top-0 z-70 border-t-1 border-dark-700 overflow-hidden">
     <div
-      class="w-full bg-white border-b-1 border-gray-200 border-opacity-60 glass"
+      class="
+        w-full
+        bg-dark-700
+        backdrop-filter backdrop-blur-6
+        border-b-1 border-dark-200 border-opacity-20
+        bg-opacity-20
+      "
     >
-      <div class="mx-auto lg:max-w-screen-xxl">
-        <div class="py-11 flex items-center sm:py-12">
-          <div
-            class="w-17 text-gray-900 flex items-center pl-8 sm:w-24 sm:pl-11 lg:pl-13 lg:w-31 xl:w-33"
-          >
-            <LogoNevo />
-          </div>
-          <div
-            class="flex-auto px-8 flex justify-end items-center sm:px-11 lg:px-13"
-          >
-            <div class="mr-11 text-3 text-gray-500 weight-500 sm:mr-14">
-              <span>v{{ $config.nevo.version }}</span>
-            </div>
-            <div class="flex justify-end items-center">
-              <IconGithub />
-            </div>
-          </div>
+      <div class="flex items-center justify-between h-20">
+        <div
+          class="
+            flex
+            items-center
+            flex-shrink-0
+            px-8
+            sm:px-11
+            xl:px-12
+            lg:w-31
+            xl:w-33
+          "
+        >
+          <LogoDocs />
+          <BadgeNevoVersion />
+        </div>
+        <div class="w-full max-w-screen-lg px-11 sm:px-19 xxl2:px-23">
+          <SearchButton @click.native="openSearchWindow" />
+        </div>
+        <div class="flex flex-none justify-end px-8 sm:px-11 xl:px-12 xl:w-33">
+          <LinkIcons />
         </div>
       </div>
     </div>
+    <SearchWindow
+      v-if="isSearchWindowActive"
+      @closeSearch="closeSearchWindow"
+    />
+    <span v-else class="hidden"></span>
   </header>
 </template>
 
 <script>
-import LogoNevo from '../TheHeaderHome/LogoNevo'
-import IconGithub from '../TheHeaderHome/IconGithub'
+import LogoDocs from './LogoDocs'
+import BadgeNevoVersion from './BadgeNevoVersion'
+import SearchButton from './SearchButton'
+import SearchWindow from './SearchWindow'
+import LinkIcons from './LinksIcons'
 
 export default {
   components: {
-    LogoNevo,
-    IconGithub
+    LogoDocs,
+    BadgeNevoVersion,
+    SearchButton,
+    SearchWindow,
+    LinkIcons
+  },
+
+  data() {
+    return {
+      isSearchWindowActive: false
+    }
+  },
+
+  mounted() {
+    window.addEventListener('keydown', this.shortcutsKeyEvent)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.shortcutsKeyEvent)
+  },
+
+  methods: {
+    openSearchWindow() {
+      this.isSearchWindowActive = true
+    },
+
+    closeSearchWindow() {
+      this.isSearchWindowActive = false
+    },
+
+    shortcutsKeyEvent(event) {
+      if (event.metaKey && event.key === 'k') {
+        this.openSearchWindow()
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.glass {
-  background-color: rgba(#fff, 0.95);
-}
-
-@supports (backdrop-filter: blur(50px)) {
-  .glass {
-    background-color: rgba(#fff, 0.5);
-    backdrop-filter: blur(50px);
+.xxl2\:px-23 {
+  @include media($from: 1536px) {
+    padding-left: theme('spacing', '23');
+    padding-right: theme('spacing', '23');
   }
 }
 </style>
