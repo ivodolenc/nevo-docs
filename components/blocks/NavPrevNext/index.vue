@@ -1,45 +1,62 @@
 <template>
   <div
     id="prev-next-nav"
-    class="
-      pt-10
-      pb-18
-      mt-16
-      border-t-1 border-gray-200 border-opacity-70
-      text-3
-      weight-500
-      text-gray-400
-      flex
-    "
+    class="flex pt-10 pb-18 mt-16 text-4 weight-500 tracking-1"
   >
     <div class="flex flex-1">
-      <div
-        v-if="prev"
-        class="flex items-center transition-colors hover:text-gray-900"
-      >
-        <ChevronLeft class="h-6 mr-6" />
-        <NuxtLink :to="{ params: { slug: prev.slug } }">
-          {{ prev.title }}
+      <div v-if="prev" class="flex flex-col items-start">
+        <span class="text-2 text-gray-400 text-opacity-60 mb-6 tracking-3"
+          >Previous</span
+        >
+        <NuxtLink
+          :to="{ params: { slug: prev.slug } }"
+          class="
+            flex
+            items-center
+            text-sky-500
+            transition-colors
+            hover:text-sky-600
+          "
+        >
+          <span>
+            <ChevronLeft class="h-6 mr-6" />
+          </span>
+          <span>
+            {{ prev.title }}
+          </span>
         </NuxtLink>
       </div>
     </div>
     <div class="flex flex-1 justify-end">
-      <div
-        v-if="next"
-        class="flex items-center transition-colors hover:text-gray-900"
-      >
-        <NuxtLink :to="{ params: { slug: next.slug } }">
-          {{ next.title }}
+      <div v-if="next" class="flex flex-col items-end">
+        <span class="text-2 text-gray-400 text-opacity-60 mb-6 tracking-3"
+          >Next</span
+        >
+        <NuxtLink
+          :to="{ params: { slug: next.slug } }"
+          class="
+            flex
+            items-center
+            text-sky-500
+            transition-colors
+            hover:text-sky-600
+          "
+        >
+          <span>
+            {{ next.title }}
+          </span>
+          <span>
+            <ChevronRight class="h-6 ml-6" />
+          </span>
         </NuxtLink>
-        <ChevronRight class="h-6 ml-6" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ChevronLeft from './ChevronLeft'
-import ChevronRight from './ChevronRight'
+import ChevronLeft from './icons/IconChevronLeft'
+import ChevronRight from './icons/IconChevronRight'
 
 export default {
   components: {
