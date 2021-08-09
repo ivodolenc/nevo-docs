@@ -1,31 +1,36 @@
 <template>
-  <header class="relative top-0 z-100 border-t-1 border-white">
-    <div
-      class="w-full bg-white border-b-1 border-gray-200 border-opacity-60 xl:border-transparent"
-    >
-      <div class="mx-auto lg:max-w-screen-xxl">
-        <div class="py-11 flex items-center sm:py-12">
-          <div
-            class="w-17 text-gray-900 flex items-center pl-8 sm:pl-11 lg:pl-13 sm:w-24 lg:w-31 xl:w-33"
-          >
-            <LogoNevo />
-          </div>
-          <div
-            class="flex-auto flex justify-end items-center px-8 sm:px-11 lg:px-13"
-          >
-            <div class="mr-11 text-3 text-gray-500 weight-500 sm:mr-14">
-              <NuxtLink
-                to="/docs"
-                class="transition-colors hover:text-gray-900"
-              >
-                <span class="sm:hidden">Docs</span>
-                <span class="hidden sm:inline">Documentation</span>
-              </NuxtLink>
-            </div>
-            <div class="flex justify-end items-center text-gray-400">
-              <IconGithub />
-            </div>
-          </div>
+  <header
+    class="
+      absolute
+      top-0
+      left-0
+      w-full
+      z-70
+      border-t-1 border-transparent
+      overflow-hidden
+    "
+  >
+    <div class="max-w-screen-xxl mx-auto border-b-1 border-transparent">
+      <div class="flex items-center justify-between h-21 xl:h-22">
+        <div
+          class="
+            flex
+            items-center
+            pl-8
+            sm:pl-11
+            xl:pl-12
+            md:w-29
+            lg:w-32
+            xl:w-34
+          "
+        >
+          <LogoHome />
+        </div>
+        <div class="hidden px-12 md:block">
+          <NavFeatured />
+        </div>
+        <div class="text-right pr-8 sm:pr-11 xl:pr-12 md:w-29 lg:w-32 xl:w-34">
+          <ButtonDocs />
         </div>
       </div>
     </div>
@@ -33,13 +38,15 @@
 </template>
 
 <script>
-import LogoNevo from './LogoNevo'
-import IconGithub from './IconGithub'
+import LogoHome from './LogoHome'
+import NavFeatured from './NavFeatured'
+import ButtonDocs from './ButtonDocs'
 
 export default {
   components: {
-    LogoNevo,
-    IconGithub
+    LogoHome,
+    NavFeatured,
+    ButtonDocs
   }
 }
 </script>
