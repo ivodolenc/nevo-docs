@@ -6,8 +6,8 @@
         bg-dark-700
         backdrop-filter backdrop-blur-6
         border-b-1 border-dark-200 border-opacity-20
-        bg-opacity-20
       "
+      :class="{ 'bg-opacity-20': !$browser.is('firefox') }"
     >
       <div class="flex items-center justify-between h-20">
         <div
