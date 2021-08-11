@@ -4,3 +4,32 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 position: 456
 category: Grid
 ---
+
+## Defaults
+
+<TableGenerateCommon
+  :rules="{
+    'col-start-1': ['grid-column-start: 1;'],
+    'col-start-2': ['grid-column-start: 2;'],
+    'col-start-3': ['grid-column-start: 3;'],
+    'col-start-4': ['grid-column-start: 4;'],
+    'col-start-5': ['grid-column-start: 5;'],
+    'col-start-6': ['grid-column-start: 6;'],
+    'col-start-7': ['grid-column-start: 7;'],
+    'col-start-8': ['grid-column-start: 8;'],
+    'col-start-9': ['grid-column-start: 9;'],
+    'col-start-10': ['grid-column-start: 10;'],
+    'col-start-11': ['grid-column-start: 11;'],
+    'col-start-12': ['grid-column-start: 12;'],
+    'col-start-auto': ['grid-column-start: auto;'],
+}"></TableGenerateCommon>
+
+## Usage
+
+## Responsive
+
+## Settings
+
+### Variants
+
+### Utilities

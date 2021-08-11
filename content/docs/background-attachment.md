@@ -5,12 +5,21 @@ position: 150
 category: Backgrounds
 ---
 
-<div data-content-table="class-info">
+## Defaults
 
-| Class     | Properties                     |
-| :-------- | :----------------------------- |
-| bg-fixed  | background-attachment: fixed;  |
-| bg-local  | background-attachment: local;  |
-| bg-scroll | background-attachment: scroll; |
+<TableGenerateCommon 
+  :rules="{
+    'bg-fixed': ['background-attachment: fixed;'],
+    'bg-local': ['background-attachment: local;'],
+    'bg-scroll': ['background-attachment: scroll;'],
+}"></TableGenerateCommon>
 
-</div>
+## Usage
+
+## Responsive
+
+## Settings
+
+### Variants
+
+### Utilities
