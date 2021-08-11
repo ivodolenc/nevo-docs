@@ -30,7 +30,25 @@
             -tracking-1
           "
         >
-          {{ page.title }}
+          <span>
+            {{ page.title }}
+          </span>
+          <span
+            v-if="page.badge"
+            class="
+              text-3
+              tracking-1
+              weight-500
+              text-sky-400
+              bg-sky-700 bg-opacity-40
+              px-8
+              py-3
+              rounded-6
+              ml-12
+            "
+            >{{ page.badge }}</span
+          >
+          <span v-else class="hidden"></span>
         </h1>
         <p class="text-6 text-gray-50 tracking-3">{{ page.description }}</p>
       </div>
@@ -69,15 +87,21 @@ export default {
 
   layout: 'docs',
 
-  async asyncData({ $content, params }) {
-    const page = await $content('docs', params.slug).fetch()
-    const [prev, next] = await $content('docs')
-      .only(['title', 'slug'])
-      .sortBy('position')
-      .surround(page.slug)
-      .fetch()
+  async asyncData({ $content, params, error }) {
+    try {
+      const page = await $content('docs', params.slug).fetch()
+      const [prev, next] = await $content('docs')
+        .only(['title', 'slug'])
+        .sortBy('position')
+        .surround(params.slug)
+        .fetch()
 
-    return { page, prev, next }
+      return { page, prev, next }
+    } catch (err) {
+      error({
+        statusCode: 404
+      })
+    }
   },
 
   head() {
