@@ -5,7 +5,7 @@ export default {
   },
 
   app: {
-    baseUrl: 'https://website.com',
-    url: 'https://www.website.com'
+    baseUrl: 'https://nevo-framework.netlify.app',
+    url: 'https://nevo-framework.netlify.app'
   }
 }

@@ -226,11 +226,6 @@ export default {
     copyExistingFiles: false,
 
     netlifyToml: {
-      build: {
-        publish: 'dist',
-        command: 'yarn generate'
-      },
-
       headers: [
         {
           for: '/*',

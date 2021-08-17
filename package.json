@@ -1,11 +1,10 @@
 {
-  "private": true,
   "name": "nevo-docs",
   "version": "1.0.0",
   "description": "Documentation for the Nevo framework.",
   "author": "Ivo Dolenc",
   "license": "MIT",
-  "homepage": "https://github.com/ivodolenc/nevo-docs#readme",
+  "homepage": "https://nevo-framework.netlify.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivodolenc/nevo-docs.git"
