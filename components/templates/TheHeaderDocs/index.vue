@@ -1,13 +1,13 @@
 <template>
   <header class="sticky top-0 z-70 border-t-1 border-dark-700 overflow-hidden">
     <div
+      ref="headerBg"
       class="
         w-full
         bg-dark-700
         backdrop-filter backdrop-blur-6
         border-b-1 border-dark-200 border-opacity-20
       "
-      :class="{ 'bg-opacity-20': !$browser.is('firefox') }"
     >
       <div class="flex items-center justify-between h-20">
         <div
@@ -59,11 +59,13 @@ export default {
 
   data() {
     return {
-      isSearchWindowActive: false
+      isSearchWindowActive: false,
+      isFirefox: this.$browser.is('firefox')
     }
   },
 
   mounted() {
+    this.addOpacityToHeader()
     window.addEventListener('keydown', this.shortcutsKeyEvent)
   },
 
@@ -83,6 +85,12 @@ export default {
     shortcutsKeyEvent(event) {
       if (event.metaKey && event.key === 'k') {
         this.openSearchWindow()
+      }
+    },
+
+    addOpacityToHeader() {
+      if (!this.isFirefox) {
+        this.$refs.headerBg.classList.add('bg-opacity-20')
       }
     }
   }
