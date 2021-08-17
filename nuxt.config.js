@@ -228,7 +228,7 @@ export default {
     netlifyToml: {
       build: {
         publish: 'dist',
-        command: 'npm run generate'
+        command: 'yarn generate'
       },
 
       headers: [
