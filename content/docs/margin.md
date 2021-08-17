@@ -9,7 +9,7 @@ category: Spacing
 
 <TableGenerateTheme
   set="spacing"
-  negative="true"
+  :negative="true"
   :rules="{
     'm': ['margin'],
     'mt': ['margin-top'],

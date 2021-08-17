@@ -9,7 +9,7 @@ category: Spacing
 
 <TableGenerateBetween
   set="spacing"
-  negative="true"
+  :negative="true"
   selector-name="space"
   property-right="margin-right"
   property-left="margin-left"

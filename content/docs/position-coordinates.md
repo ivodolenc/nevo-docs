@@ -10,7 +10,7 @@ tags: top, right, bottom, left
 
 <TableGenerateTheme
   set="spacing"
-  negative="true"
+  :negative="true"
   :rules="{
     'top': ['top'],
     'right': ['right'],

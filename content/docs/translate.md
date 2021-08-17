@@ -9,7 +9,7 @@ category: Transforms
 
 <TableGenerateTheme
   set="spacing"
-  negative="true"
+  :negative="true"
   :custom-rules="{
     'translate-x-full': ['--translate-x: 100%;'],
     '-translate-x-full': ['--translate-x: -100%;'],
