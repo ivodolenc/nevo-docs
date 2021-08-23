@@ -4,7 +4,7 @@
       table-wrapper
       relative
       overflow-auto
-      mb-18
+      mb-16
       pt-6
       pb-10
       rounded-6

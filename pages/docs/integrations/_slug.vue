@@ -30,9 +30,7 @@
             -tracking-1
           "
         >
-          <span>
-            {{ page.title }}
-          </span>
+          <span>Integrate Nevo with {{ page.title }}</span>
           <span
             v-if="page.badge"
             class="
@@ -63,37 +61,17 @@
 import NavPrevNext from '~/components/blocks/NavPrevNext'
 import TheSidebarRight from '~/components/templates/TheSidebarRight'
 
-/* eslint-disable */
-import TableGenerateBetween from '~/components/content/TableGenerateRules/TableGenerateBetween'
-import TableGenerateColors from '~/components/content/TableGenerateRules/TableGenerateColors'
-import TableGenerateCommon from '~/components/content/TableGenerateRules/TableGenerateCommon'
-import TableGenerateContainer from '~/components/content/TableGenerateRules/TableGenerateContainer'
-import TableGenerateTheme from '~/components/content/TableGenerateRules/TableGenerateTheme'
-
-import IntegrationGuides from '~/components/content/Installation/IntegrationGuides'
-/* eslint-enable */
-
 export default {
   components: {
     NavPrevNext,
-    TheSidebarRight,
-
-    /* eslint-disable */
-    TableGenerateBetween,
-    TableGenerateColors,
-    TableGenerateCommon,
-    TableGenerateContainer,
-    TableGenerateTheme,
-
-    IntegrationGuides
-    /* eslint-enable */
+    TheSidebarRight
   },
 
   layout: 'docs',
 
   async asyncData({ $content, params, error }) {
-    const page = await $content('docs', params.slug).fetch()
-    const [prev, next] = await $content('docs')
+    const page = await $content('docs/integrations', params.slug).fetch()
+    const [prev, next] = await $content('docs/integrations')
       .only(['title', 'slug'])
       .sortBy('position')
       .surround(params.slug)
@@ -109,6 +87,7 @@ export default {
   head() {
     return {
       title:
+        'Integrate Nevo with ' +
         this.page.title +
         this.$config.app.titleSeparator +
         this.$config.app.title,

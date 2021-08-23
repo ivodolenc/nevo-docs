@@ -26,6 +26,10 @@ export const navMain = [
     // Position: 0-50
     'Getting started': [
       {
+        name: 'Introduction',
+        path: '/docs/introduction'
+      },
+      {
         name: 'Installation',
         path: '/docs/installation'
       }
